@@ -1,0 +1,50 @@
+{
+  "name": "shoppy-server",
+  "version": "1.0.0",
+  "description": "The server running the Shoppy API used by shoppy apps",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "db:migrate": "node database/migrations/index.js",
+    "db:seed": "node database/seeds/index.js",
+    "db:dev": "node database/migrations/index.js dev && node database/seeds/index.js",
+    "test": "node_modules/.bin/jest --watch --maxWorkers=1",
+    "start": "node dist"
+  },
+  "author": "Fravan",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "3.0.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "8.2.0",
+    "graphql": "14.6.0",
+    "graphql-iso-date": "3.6.1",
+    "graphql-tools": "4.0.6",
+    "jsonwebtoken": "8.5.1",
+    "koa": "2.11.0",
+    "koa-bodyparser": "4.2.1",
+    "koa-graphql": "0.8.0",
+    "koa-helmet": "5.2.0",
+    "koa-router": "8.0.7",
+    "pg": "7.18.1",
+    "slonik": "^22.4.2",
+    "slonik-sql-tag-raw": "^1.0.1",
+    "typescript": "3.7.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.2",
+    "@types/jest": "25.1.2",
+    "@types/jsonwebtoken": "8.3.7",
+    "@types/koa": "2.11.0",
+    "@types/koa-bodyparser": "4.3.0",
+    "@types/koa-graphql": "0.8.3",
+    "@types/koa-helmet": "3.1.2",
+    "@types/koa-router": "7.4.0",
+    "@types/koa__cors": "3.0.1",
+    "@types/nanoid": "2.1.0",
+    "@types/node": "13.7.0",
+    "@types/pg": "7.14.1",
+    "jest": "25.1.0",
+    "ts-jest": "25.2.0"
+  }
+}
