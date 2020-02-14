@@ -10,7 +10,8 @@ import cors from '@koa/cors'
 
 // import schema from './graphql'
 // import authorize from './middlewares/authorize'
-// import requestLogin from './middlewares/request-login'
+import requestLogin from './middlewares/request-login'
+import login from './middlewares/login'
 // import login, { autologin } from './middlewares/login'
 
 const app = new Koa()
@@ -31,12 +32,9 @@ app.use(
 )
 
 const router = new Router()
-router.get('/', async (ctx, next) => {
-  ctx.body = 'Hello World :)'
-  await next()
-})
-// router.post('/request-login', requestLogin())
-// router.post('/login', login())
+
+router.post('/request-login', requestLogin())
+router.post('/login', login())
 // if (process.env.NODE_ENV === 'production') {
 //   router.post('/graphql', authorize(), graphqlKoa({ schema }))
 // } else {
